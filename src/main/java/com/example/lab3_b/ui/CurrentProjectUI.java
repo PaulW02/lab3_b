@@ -1,14 +1,6 @@
 package com.example.lab3_b.ui;
 
-import com.example.lab3_b.model.Prio;
-import com.example.lab3_b.model.Project;
-import com.example.lab3_b.model.Task;
-import com.example.lab3_b.model.TaskState;
-import model.matcher.AllTasksmatcher;
-import model.matcher.ITaskMatcher;
-import model.matcher.NotDoneMatcher;
-import model.matcher.PrioMatcher;
-import model.*;
+import com.example.lab3_b.model.*;
 
 import java.util.List;
 import java.util.Scanner;
@@ -45,7 +37,7 @@ class CurrentProjectUI {
 
             switch (choice) {
                 case 'T':
-                    viewTasks(new AllTasksmatcher());
+                    viewTasks(new TakenByMatcher("test"));
                     break;
                 case 'N':
                     viewTasks(new NotDoneMatcher());

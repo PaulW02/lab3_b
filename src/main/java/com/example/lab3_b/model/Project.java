@@ -24,7 +24,7 @@ public class Project implements Comparable{
     }
 
     public List<Task> findTasks(ITaskMatcher matcher){
-
+        return tasks;
     }
 
     public void addTask(String description, Prio prio){

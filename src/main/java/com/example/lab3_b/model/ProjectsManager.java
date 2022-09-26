@@ -38,7 +38,7 @@ public class ProjectsManager {
     }
 
     public List<Project> findProjects(String titleStr){
-
+        return projects;
     }
 
     private int getHighestId(){
