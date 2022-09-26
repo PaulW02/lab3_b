@@ -1,5 +1,9 @@
 package com.example.lab3_b.ui;
 
+import com.example.lab3_b.model.Prio;
+import com.example.lab3_b.model.Project;
+import com.example.lab3_b.model.Task;
+import com.example.lab3_b.model.TaskState;
 import model.matcher.AllTasksmatcher;
 import model.matcher.ITaskMatcher;
 import model.matcher.NotDoneMatcher;

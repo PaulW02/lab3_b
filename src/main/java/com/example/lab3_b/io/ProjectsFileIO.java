@@ -1,6 +1,6 @@
 package com.example.lab3_b.io;
 
-import model.Project;
+import com.example.lab3_b.model.Project;
 
 import java.io.*;
 import java.util.List;

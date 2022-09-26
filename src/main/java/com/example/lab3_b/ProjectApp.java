@@ -1,9 +1,10 @@
 package com.example.lab3_b;
 
-import io.ProjectsFileIO;
-import model.Project;
-import model.ProjectsManager;
-import ui.MainUI;
+import com.example.lab3_b.io.ProjectsFileIO;
+import com.example.lab3_b.model.Project;
+import com.example.lab3_b.model.ProjectsManager;
+import com.example.lab3_b.ui.MainUI;
+
 
 import java.io.File;
 import java.io.FileNotFoundException;
