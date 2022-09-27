@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Project implements Comparable<Project>{
+public class Project implements Comparable<Project>{ //sätta till implements Serializable
     private final String title;
     private final int id;
     private final String description;
