@@ -37,7 +37,7 @@ class CurrentProjectUI {
 
             switch (choice) {
                 case 'T':
-                    viewTasks(new TakenByMatcher("test"));
+                    viewTasks(new TakenByMatcher(Email.createEmail("paulartin@gmail.com")));
                     break;
                 case 'N':
                     viewTasks(new NotDoneMatcher());

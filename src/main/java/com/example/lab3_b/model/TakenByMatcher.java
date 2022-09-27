@@ -1,18 +1,16 @@
 package com.example.lab3_b.model;
 
-import javafx.concurrent.Task;
-
-import java.util.ArrayList;
+import java.util.Objects;
 
 public class TakenByMatcher implements ITaskMatcher {
-    private String takenBy;
+    private final Email takenBy;
 
-    public TakenByMatcher(String takenBy) {
+    public TakenByMatcher(Email takenBy) {
         this.takenBy = takenBy;
     }
 
     @Override
     public boolean match(Task task) {
-        return false;
+        return Objects.equals(task.getTakenBy(), this.takenBy.getAsString());
     }
 }

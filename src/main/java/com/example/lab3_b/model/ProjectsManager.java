@@ -5,28 +5,42 @@ import java.util.List;
 
 public class ProjectsManager {
     private int nextProjectId;
-    private List<Project> projects;
+    private final ArrayList<Project> projects;
 
     public ProjectsManager() {
         this.projects = new ArrayList<>();
+        this.nextProjectId = 0;
     }
 
     public void setProjects(List<Project> incomingProjects){
+        projects.clear();
         projects.addAll(incomingProjects);
+        nextProjectId = projects.size();
     }
 
     public List<Project> getProjects() {
-        return projects;
+        List<Project> projectsToReturn = (List<Project>) projects.clone();
+        return projectsToReturn;
     }
 
     public boolean isTitleUnique(String title){
-        return false;
+        for (Project p: projects) {
+            if(p.getTitle().equals(title)){
+                return false;
+            }
+        }
+        return true;
     }
 
-    public Project addProject(String title, String description){
-        Project newProject = new Project(title, nextProjectId, description);
-        projects.add(newProject);
-        return newProject;
+    public Project addProject(String title, String description) throws TitleNotUniqueException{
+        if(isTitleUnique(title)) {
+            Project newProject = new Project(title, nextProjectId, description);
+            projects.add(newProject);
+            nextProjectId = projects.size();
+            return newProject;
+        }else {
+            throw new TitleNotUniqueException();
+        }
     }
 
     public void removeProject(Project project){
@@ -38,10 +52,23 @@ public class ProjectsManager {
     }
 
     public List<Project> findProjects(String titleStr){
-        return projects;
+        List<Project> foundProjects = new ArrayList<>();
+        for (Project p: projects) {
+            if(p.getTitle().equals(titleStr)){
+                foundProjects.add(p);
+            }
+        }
+        return foundProjects;
     }
 
     private int getHighestId(){
-        return 0;
+        return nextProjectId-1;
+    }
+
+    @Override
+    public String toString() {
+        return "ProjectsManager{" +
+                "projects=" + projects +
+                '}';
     }
 }
