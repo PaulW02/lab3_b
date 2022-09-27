@@ -1,4 +1,7 @@
-package com.example.lab3_b.model;
+package com.example.lab3_b.model.matcher;
+
+import com.example.lab3_b.model.Email;
+import com.example.lab3_b.model.Task;
 
 import java.util.Objects;
 

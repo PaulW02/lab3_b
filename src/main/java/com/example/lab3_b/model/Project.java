@@ -1,11 +1,14 @@
 package com.example.lab3_b.model;
 
+import com.example.lab3_b.model.matcher.ITaskMatcher;
+
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Project implements Comparable<Project>{ //sätta till implements Serializable
+public class Project implements Comparable<Project>, Serializable { //sätta till implements Serializable
     private final String title;
     private final int id;
     private final String description;
@@ -106,10 +109,6 @@ public class Project implements Comparable<Project>{ //sätta till implements Se
 
     @Override
     public String toString() {
-        return "Project{" +
-                "title='" + title + '\'' +
-                ", id=" + id +
-                ", description='" + description + '\'' +
-                '}';
+        return id + " " + title + " " + description;
     }
 }

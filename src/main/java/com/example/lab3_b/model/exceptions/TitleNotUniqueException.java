@@ -1,4 +1,4 @@
-package com.example.lab3_b.model;
+package com.example.lab3_b.model.exceptions;
 
 public class TitleNotUniqueException extends RuntimeException{
 

@@ -1,6 +1,7 @@
 package com.example.lab3_b.ui;
 
 import com.example.lab3_b.model.*;
+import com.example.lab3_b.model.matcher.*;
 
 import java.util.List;
 import java.util.Scanner;
@@ -37,7 +38,7 @@ class CurrentProjectUI {
 
             switch (choice) {
                 case 'T':
-                    viewTasks(new TakenByMatcher(Email.createEmail("paulartin@gmail.com")));
+                    viewTasks(new AllTasksMatcher());
                     break;
                 case 'N':
                     viewTasks(new NotDoneMatcher());

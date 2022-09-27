@@ -1,9 +1,10 @@
 package com.example.lab3_b.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Task implements Comparable<Task> {
+public class Task implements Comparable<Task>, Serializable {
     private final String description;
     private final int id;
     private String takenBy;
@@ -18,6 +19,7 @@ public class Task implements Comparable<Task> {
         this.id = id;
         this.prio = prio;
         this.takenBy = null;
+        this.lastUpdate = LocalDate.now();
     }
 
     public String getTakenBy() {
@@ -75,10 +77,6 @@ public class Task implements Comparable<Task> {
 
     @Override
     public String toString() {
-        return "Task{" +
-                "description='" + description + '\'' +
-                ", id=" + id +
-                ", takenBy='" + takenBy + '\'' +
-                '}';
+        return id + " " + takenBy + " " + description;
     }
 }

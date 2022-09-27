@@ -3,6 +3,7 @@ package com.example.lab3_b.io;
 import com.example.lab3_b.model.Project;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -36,15 +37,15 @@ public class ProjectsFileIO {
      * from file the specified file.
      */
     @SuppressWarnings("unchecked")
-    public static List<Project> deSerializeFromFile(File file)
-            throws IOException, ClassNotFoundException {
+    public static List<Project> deSerializeFromFile(File file) throws IOException, ClassNotFoundException {
 
-            ObjectInputStream in =null;
+        ObjectInputStream in = null;
         try{
             in = new ObjectInputStream(new FileInputStream(file));
+            System.out.println(in.readObject());
             List<Project> data = (List<Project>) in.readObject();
             return data;
-        }  finally {
+        } finally{
             if (in != null){
                 in.close();
             }

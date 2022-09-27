@@ -1,5 +1,7 @@
 package com.example.lab3_b.model;
 
+import com.example.lab3_b.model.exceptions.TitleNotUniqueException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +25,7 @@ public class ProjectsManager {
         return projectsToReturn;
     }
 
+
     public boolean isTitleUnique(String title){
         for (Project p: projects) {
             if(p.getTitle().equals(title)){
@@ -32,7 +35,7 @@ public class ProjectsManager {
         return true;
     }
 
-    public Project addProject(String title, String description) throws TitleNotUniqueException{
+    public Project addProject(String title, String description) throws TitleNotUniqueException {
         if(isTitleUnique(title)) {
             Project newProject = new Project(title, nextProjectId, description);
             projects.add(newProject);
@@ -54,7 +57,7 @@ public class ProjectsManager {
     public List<Project> findProjects(String titleStr){
         List<Project> foundProjects = new ArrayList<>();
         for (Project p: projects) {
-            if(p.getTitle().equals(titleStr)){
+            if(p.getTitle().contains(titleStr)){
                 foundProjects.add(p);
             }
         }
