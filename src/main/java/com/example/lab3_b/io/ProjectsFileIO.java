@@ -42,9 +42,7 @@ public class ProjectsFileIO {
         ObjectInputStream in = null;
         try{
             in = new ObjectInputStream(new FileInputStream(file));
-            System.out.println(in.readObject());
-            List<Project> data = (List<Project>) in.readObject();
-            return data;
+            return (List<Project>) in.readObject();
         } finally{
             if (in != null){
                 in.close();
