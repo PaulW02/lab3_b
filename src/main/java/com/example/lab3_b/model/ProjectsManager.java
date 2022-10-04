@@ -14,7 +14,7 @@ public class ProjectsManager {
         this.nextProjectId = 0;
     }
 
-    /** Clears the projects and sets them with the list of incoming projects.
+    /** Clears the projects and sets the list with the incoming projects.
      * @param incomingProjects a list of incoming projects that is added to the projects.
      */
     public void setProjects(List<Project> incomingProjects){
@@ -35,7 +35,7 @@ public class ProjectsManager {
 
     /** Compares the specific title to the titles of all projects and returns true if any titles equals eachother.
      * @param title the title of a project to be compared with.
-     * @return whether the title equals to any of the titles amoung the projects.
+     * @return whether the title equals to any of the titles among the projects.
      */
     public boolean isTitleUnique(String title){
         for (Project p: projects) {
@@ -74,7 +74,7 @@ public class ProjectsManager {
 
 
     /** Return a project from a specific id.
-     * @param id the id to get the project from.
+     * @param id the project's id.
      * @return the project specified by the id.
      */
     public Project getProjectById(int id){
@@ -98,7 +98,7 @@ public class ProjectsManager {
 
 
     /** Return the highest id of the projects
-     * @return the highets id
+     * @return the highest id
      */
     private int getHighestId(){
         return nextProjectId-1;

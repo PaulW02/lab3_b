@@ -22,14 +22,14 @@ public class Task implements Comparable<Task>, Serializable {
 
 
     /**
-     * @return what the task was taken by
+     * @return who the task was taken by
      */
     public String getTakenBy() {
         return takenBy;
     }
 
 
-    /** sets name of the one that has taken the task
+    /** Sets name of the one that has taken the task
      * @param takenBy the one who has taken the task
      * @throws IllegalStateException if the task is already taken
      */
@@ -77,7 +77,7 @@ public class Task implements Comparable<Task>, Serializable {
 
 
     /** Set the specific prio
-     * @param prio the spefic prio to be set
+     * @param prio the specific prio to be set
      */
     public void setPrio(Prio prio) {
         this.prio = prio;
@@ -85,9 +85,9 @@ public class Task implements Comparable<Task>, Serializable {
     }
 
 
-    /** Return the priority comparing with a specific task. If the tasks have the same prio, then compare de prio of the description.
+    /** Return the comparison of the prio between two tasks. If the tasks have the same prio, compare the descriptions.
      * @param o the task to be compared.
-     * @return return the priority order
+     * @return return the comparison of the two tasks
      */
     @Override
     public int compareTo(Task o) {
@@ -100,8 +100,8 @@ public class Task implements Comparable<Task>, Serializable {
 
 
     /** Checks if two tasks have the same description and priority
-     * @param o the specific task to me compared with
-     * @return true if the tasks have the same description and priority
+     * @param o the specific task to be compared with
+     * @return true if the tasks have the same description and priority and false if not
      */
     @Override
     public boolean equals(Object o) {

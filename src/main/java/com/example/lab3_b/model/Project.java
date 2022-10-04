@@ -26,8 +26,8 @@ public class Project implements Comparable<Project>, Serializable { //sätta til
         this.nextTaskId = 0;
     }
 
-    /**Finds a task through its ID and returns the task
-     * @param id the id of a specifik task
+    /** Finds a task through its ID and returns the task
+     * @param id the id of a specific task
      * @return the task of the specified ID
      */
     public Task getTaskById(int id){
@@ -35,7 +35,7 @@ public class Project implements Comparable<Project>, Serializable { //sätta til
     }
 
     /**
-     * @param matcher matches similiar tasks found amoung the tasks
+     * @param matcher matches tasks based on what type of matcher it is
      * @return returns the found tasks
      */
     public List<Task> findTasks(ITaskMatcher matcher){
@@ -60,9 +60,9 @@ public class Project implements Comparable<Project>, Serializable { //sätta til
 
 
     /**
-     * adds a new task to the tasks
+     * Adds a new task to the tasks list
      * @param description the description of the new task
-     * @param prio the priotization of the new task
+     * @param prio the prioritization of the new task
      */
     public void addTask(String description, Prio prio){
         tasks.add(new Task(description, prio, nextTaskId));
@@ -71,8 +71,8 @@ public class Project implements Comparable<Project>, Serializable { //sätta til
 
 
     /**
-     * removes a specific task from the project
-     * @param task the task that is called to be removed
+     * Removes a specific task from the project
+     * @param task the task that will be removed
      * @return the task that was removed
      */
     public Task removeTask(Task task){
@@ -82,7 +82,7 @@ public class Project implements Comparable<Project>, Serializable { //sätta til
 
 
     /**
-     * return the title
+     * Return the title
      * @return the title
      */
     public String getTitle() {
@@ -91,7 +91,7 @@ public class Project implements Comparable<Project>, Serializable { //sätta til
 
 
     /** Calculates the state of the project through the tasks in it.
-     * @return the state of the project, whether it is empty, completed or done.
+     * @return the state of the project, whether it is empty, ongoing or completed.
      */
     public ProjectState getState(){
         int counter = 0;
@@ -113,8 +113,8 @@ public class Project implements Comparable<Project>, Serializable { //sätta til
     }
 
 
-    /** Go through all tasks and return the last updated task.
-     * @return the last updated task.
+    /** Go through all tasks and return the date of the last updated task.
+     * @return the date of the last updated task.
      */
     public LocalDate getLastUpdated(){
         LocalDate lastUpdated = tasks.get(0).getLastUpdate();
@@ -127,7 +127,7 @@ public class Project implements Comparable<Project>, Serializable { //sätta til
         return lastUpdated;
     }
 
-    /**Compare the title of a specific project with another title and return it
+    /** Compare the title of a specific project with another title and return it
      * @param o the object to be compared.
      * @return the comparison of titles from two projects
      */
@@ -140,7 +140,7 @@ public class Project implements Comparable<Project>, Serializable { //sätta til
     /**
      * Returns whether the specified project has the same description as the other object or not.
      * @param o the project to be compared to
-     * @return true if the description och the projects are the same or not.
+     * @return true if the description of the projects are the same and false if not.
      */
     @Override
     public boolean equals(Object o) {
