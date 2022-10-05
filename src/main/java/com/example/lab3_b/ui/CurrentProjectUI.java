@@ -38,7 +38,9 @@ class CurrentProjectUI {
 
             switch (choice) {
                 case 'T':
-                    viewTasks(new AllTasksMatcher());
+                    System.out.print("Name? ");
+                    String takenBy = scan.nextLine();
+                    viewTasks(new TakenByMatcher(takenBy));
                     break;
                 case 'N':
                     viewTasks(new NotDoneMatcher());
@@ -101,7 +103,7 @@ class CurrentProjectUI {
 
     private void printCurrentProjectMenu() {
         System.out.println("--- Manage " + currentProject.getTitle() + " ---");
-        System.out.println("T - list all tasks");
+        System.out.println("T - list tasks taken by ...");
         System.out.println("N - list tasks not done");
         System.out.println("H - list high priority tasks");
         System.out.println("A - add task");
